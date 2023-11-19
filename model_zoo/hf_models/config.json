@@ -1,0 +1,28 @@
+{
+  "architectures": [
+    "InternMLMForCausalLM"
+  ],
+  "auto_map": {
+    "AutoConfig": "configuration_internmlm.InternMLMConfig",
+    "AutoModelForCausalLM": "modeling_internmlm.InternMLMForCausalLM",
+    "AutoModel": "modeling_internmlm.InternMLMForCausalLM"
+  },
+  "bias": true,
+  "bos_token_id": 1,
+  "eos_token_id": 2,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 11008,
+  "max_position_embeddings": 2048,
+  "model_type": "internmlm",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "pad_token_id": 0,
+  "rms_norm_eps": 1e-06,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.28.1",
+  "use_cache": true,
+  "vocab_size": 103168
+}
