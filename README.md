@@ -21,7 +21,7 @@ python3 inference.py
 ## MME evaluation
 First copy the official MME evaluation files into ./MME_Benchmark_release_version. Then run:
 ```
-bash mme_eval_wemm.sh
+bash mme_eval.sh
 ```
 
 ## MME Benchmark
