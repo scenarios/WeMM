@@ -41,73 +41,6 @@ DEFAULT_IMAGE_PATCH_TOKEN = "<im_patch>"
 DEFAULT_IM_START_TOKEN = "<im_start>"
 DEFAULT_IM_END_TOKEN = "<im_end>"
 
-def decode_base64_to_image(base64_string):
-    image_data = base64.b64decode(base64_string)
-    image = Image.open(io.BytesIO(image_data))
-    return image
-
-class MMEDataset(Dataset):
-    def __init__(self,
-                 data_folder,
-                 category,):
-        self.data_folder = data_folder
-        category_root = f'{self.data_folder}/{category}'
-        if os.path.exists(f'{category_root}/images'):
-            category_root = f'{category_root}/images'
-        with open(f'{self.data_folder}/eval_tool/Your_Results/{category}.txt',"r",encoding="utf-8") as f:
-            lines = f.readlines()
-                
-        self.filelist = []
-        for line in lines:
-            line = line.strip()
-            img_id, question, gt_answer = line.split('\t')
-            self.filelist.append({'image': f'{category_root}/{img_id}', 'question': question, 'gt_answer': gt_answer})
-
-    def __len__(self):
-        return len(self.filelist)
-
-    def __getitem__(self, idx):
-        item = self.filelist[idx]
-        image = item['image']
-        # image = decode_base64_to_image(image)
-        question = item['question']
-        gt_answer = item['gt_answer']
-
-        # hint = self.load_from_df(idx, 'hint')
-        
-        prompt = DEFAULT_IMAGE_TOKEN + "\n" + question
-        data = {
-            'img': image,
-            'question': question,
-            'gt_answer': gt_answer,
-            'prompt': prompt,
-        }
-        return data
-    
-    def load_from_df(self, idx, key):
-            if key in self.df.iloc[idx] and not pd.isna(self.df.iloc[idx][key]):
-                return self.df.iloc[idx][key]
-            else:
-                return None
-    
-
-def insert_fixed_prefix(split_str,prefix,prompt):
-    res = prompt.rsplit(split_str,1)
-    res = split_str.join(res[:1],[prefix + res[1]])
-    return res
-
-
-def get_substring_after_second_last_occurrence(string, target):
-    target_indices = [i for i in range(len(string)) if string.startswith(target, i)]
-    start_index = target_indices[-2] + len(target)
-    return string[start_index:]
-
-
-def insert_after_last_substring(original_string, substring, string_to_insert):
-    index = original_string.rfind(substring)
-    index_after_substring = index + len(substring)
-    return original_string[:index_after_substring] + string_to_insert + original_string[index_after_substring:]
-
 
 def prepare_envs(folder, dtype='bf16'):
     import sys
@@ -199,7 +132,7 @@ if __name__ == "__main__":
     model = model.to(dtype)
 
     while 1:
-        img_name = input("input img_name: ")
+        img_name = input("input img path: ")
         prompt = input("input prompt: ")
         _, output = inference(img_pth=img_name, prompt=prompt, image_processor=image_processor, tokenizer=tokenizer, model=model,beam_search=args.beam_search, dtype=args.dtype)
         print(output)
