@@ -1,6 +1,6 @@
 # WeMM
 
-Multi-modal LLM with representation routing. Currently, we have released the model that achieves 2066.66 points on the MME benchmark. More powerful chat model will come later.
+Multi-modal LLM with representation routing. Currently, we have released the model that achieves 2066.66 points on the MME benchmark. The chat version will come later.
 
 ![](./assets/WeMM.png)
 
