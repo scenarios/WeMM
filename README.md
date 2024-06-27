@@ -14,7 +14,7 @@ WeMM is the most recent version of the multimodal large language model introduce
 - `2023/10/13`: WeMM-1.0 achieved a perception score of 1551.63 on the [MME](https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models/tree/Evaluation) benchmark, representing the state-of-the-art performance at that time.
 - `2023/09/13`: WeMM scored 68.6 points on the [MMBench](https://opencompass.org.cn/leaderboard-multimodal) leaderboard, ranking second place at the time.
 
-## Model ZOO
+## Model Zoo
 
 **Vision Large Language Model**
 | Model         | Date       | Download       |  Note           |
