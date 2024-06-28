@@ -49,7 +49,7 @@ WeMM在全部的BenchMark测评中，由于不同BenchMark的分数分布差异�
 |  <img src="./assets/VLM_Leaderboard_20B.png" width="400">   |  <img src="./assets/VLM_Leaderboard_all.png" width="420">   |
 
 ## 环境要求
-+ transformers==4.40.0
++ transformers<=4.40.0 (and >=4.38.0)
 + python >= 3.8
 + torch >= 2.0.0
 + flash-attention2 
