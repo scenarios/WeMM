@@ -88,6 +88,7 @@ wemm.cuda()
 wemm.eval()
 
 query = 'Why is the ocean blue?'
+image = 'path/to/your/image'
 pred = wemm.mm_generate(image, query)
 ```
 + WeMM-Chat-2K-CN
@@ -102,6 +103,7 @@ wemm.cuda()
 wemm.eval()
 
 query = 'Why is the ocean blue?'
+image = 'path/to/your/image'
 pred = wemm.mm_generate(image, query)
 ```
 
