@@ -89,6 +89,7 @@ wemm.cuda()
 wemm.eval()
 
 query = '为什么海水是蓝色的？'
+image = 'path/to/your/image'
 pred = wemm.mm_generate(image, query)
 ```
 
@@ -104,6 +105,7 @@ wemm.cuda()
 wemm.eval()
 
 query = '为什么海水是蓝色的？'
+image = 'path/to/your/image'
 pred = wemm.mm_generate(image, query)
 ```
 
