@@ -51,7 +51,14 @@ In all benchmark evaluations, WeMM uses the comprehensive average ranking (Avg R
 + transformers<=4.40.0 (and >=4.38.0)
 + python >= 3.8
 + torch >= 2.0.0
-+ flash-attention2
++ flash-attn
++ numpy==1.23.5
++ sentencepiece==0.1.99
++ ninja==1.11.1
++ wheel
++ cos-python-sdk-v5
++ peft
++ einops
 
 For detailed requirements, please refer to [requirements.txt](requirements.txt).
 
