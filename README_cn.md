@@ -52,7 +52,14 @@ WeMM在全部的BenchMark测评中，由于不同BenchMark的分数分布差异�
 + transformers<=4.40.0 (and >=4.38.0)
 + python >= 3.8
 + torch >= 2.0.0
-+ flash-attention2 
++ flash-attn
++ numpy==1.23.5
++ sentencepiece==0.1.99
++ ninja==1.11.1
++ wheel
++ cos-python-sdk-v5
++ peft
++ einops
 
 详细要求查看 [requirements.txt](requirements.txt)
 
